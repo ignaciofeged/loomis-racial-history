@@ -41,32 +41,34 @@ dday2<-as.Date("1710-01-01","%Y-%m-%d")
 
 ui<- fluidPage(tags$style(HTML(
   ".js-irs-0 .irs-single, .js-irs-0 .irs-bar-edge, .js-irs-0 .irs-bar {background: #98252b}")),#color goes here
-               theme = shinytheme("simplex"),
-               titlePanel("Historical Context"),
-               sidebarLayout(
-                 sidebarPanel(
-                   sliderInput(
-                     inputId = "date_range",
-                     label = "Year Range",
-                     min = as.Date("1698-01-01","%Y-%m-%d"),
-                     max = as.Date("1861-12-01","%Y-%m-%d"),
-                     value = c(dday1,dday2),
-                     timeFormat = "%Y-%m-%d",
-                     step = 1095,
-                     animate = 
-                       animationOptions(
-                         interval = 1000,
-                         loop=F,)
-                     
-                   ),
-                 ),
-                 mainPanel(
-                   timevisOutput("LCline"),
-                   (conditionalPanel(condition = "output.show_notes", 
-                                     h1("More Information:"),
-                                     br())),
-                   htmlOutput("printNotes")),
-               )
+  theme = shinytheme("simplex"),
+  titlePanel("",windowTitle = "Historical Context: Timeline"),
+  titlePanel(
+    h1("Loomis' History of Slavery: In Context", align = "center")),
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput(
+        inputId = "date_range",
+        label = "Year Range",
+        min = as.Date("1698-01-01","%Y-%m-%d"),
+        max = as.Date("1861-12-01","%Y-%m-%d"),
+        value = c(dday1,dday2),
+        timeFormat = "%Y-%m-%d",
+        step = 1095,
+        animate = 
+          animationOptions(
+            interval = 1500,
+            loop=F,)
+        
+      ),
+    ),
+    mainPanel(
+      timevisOutput("LCline"),
+      (conditionalPanel(condition = "output.show_notes", 
+                        h1("More Information:"),
+                        br())),
+      htmlOutput("printNotes")),
+  )
 )
 ##Shiny Server#####
 server <- function(input, output) {
