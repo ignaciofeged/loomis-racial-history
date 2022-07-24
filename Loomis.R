@@ -45,11 +45,13 @@ ui<- fluidPage(tags$style(HTML(
   titlePanel("",windowTitle = "Historical Context: Timeline"),
   titlePanel(
     h1("Loomis' History of Slavery: In Context", align = "center")),
+  titlePanel(
+    h5("Click on the timeline events to get a description and adjust the years shown by using the slider, the play button, zooming in/out, or draging the timeline",align="center")),
   sidebarLayout(
     sidebarPanel(
       sliderInput(
         inputId = "date_range",
-        label = "Year Range",
+        label = "Hit the Play Button or Drag the Slider to Change the Range of Years",
         min = as.Date("1698-01-01","%Y-%m-%d"),
         max = as.Date("1861-12-01","%Y-%m-%d"),
         value = c(dday1,dday2),
