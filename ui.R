@@ -6,7 +6,7 @@ library(tidyverse)
 library(shiny)
 library(shinythemes)
 
-timeline_data1<-read_excel("Timeline Data4-1.xlsx"
+timeline_data1<-read_excel("Timeline Data4-1.xlsx")
 as.tibble(timeline_data1)
 timeline_data1$month[is.na(timeline_data1$month)]<-1
 timeline_data1$help<-timeline_data1$thing-1700
