@@ -1,7 +1,6 @@
 #server.R
 
-#check yt vids work and throw on github
-
+library(timevis)
 
 server <- function(input, output) {
   
