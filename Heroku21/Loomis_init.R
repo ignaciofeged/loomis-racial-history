@@ -1,6 +1,6 @@
 #init.R
 
-my_packages = c("tidyverse", "shinythemes", "timevis")
+my_packages = c("tidyverse", "shinythemes", "timevis","readxl")
 
 install_if_missing = function(p) {
   if (p %in% rownames(installed.packages())==FALSE) {
