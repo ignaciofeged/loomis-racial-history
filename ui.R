@@ -8,6 +8,12 @@ library(shinythemes)
 library(timevis)
 library(RCurl)
 
+timevisDataGroups <- data.frame(
+  id = c("CT", "SC", "USA"),
+  content = c("Connecticut", "South Carolina", "United States"))
+dday1<-as.Date("1698-01-01","%Y-%m-%d")
+dday2<-as.Date("1710-01-01","%Y-%m-%d")
+
 ##Shiny UI#########
 ui<- fluidPage(tags$style(HTML(
   ".js-irs-0 .irs-single, .js-irs-0 .irs-bar-edge, .js-irs-0 .irs-bar {background: #98252b}")),#color goes here
