@@ -5,6 +5,7 @@ library(readxl)
 library(tidyverse)
 library(shiny)
 library(shinythemes)
+library(timevis)
 
 timeline_data1<-read_excel("Timeline Data4-1.xlsx")
 as.tibble(timeline_data1)
