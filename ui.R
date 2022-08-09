@@ -5,25 +5,9 @@ library(readxl)
 library(tidyverse)
 library(shiny)
 library(shinythemes)
+library(timevis)
+library(RCurl)
 
-timeline_data1<-read_excel("Timeline Data4-1.xlsx"
-as.tibble(timeline_data1)
-timeline_data1$month[is.na(timeline_data1$month)]<-1
-timeline_data1$help<-timeline_data1$thing-1700
-timeline_data1$help<-timeline_data1$help*365+timeline_data1$month*31
-timeline_data1$start<-as.Date(timeline_data1$help,origin="1700-01-01")
-
-timeline_data2<-read_excel("Timeline Data4-2.xlsx")
-as.tibble(timeline_data2)
-timeline_data2$month[is.na(timeline_data2$month)]<-1
-timeline_data2$help<-timeline_data2$thing-1700
-timeline_data2$help<-timeline_data2$help*365+timeline_data2$month*31
-timeline_data2$start<-as.Date(timeline_data2$help,origin="1700-01-10")
-
-timeline_data<-rbind(timeline_data1,timeline_data2)
-as.tibble(timeline_data)
-as.factor(timeline_data$group)
-timeline_data$id<-1:121
 ##Time Vis prep############
 timevisDataGroups <- data.frame(
   id = c("CT", "SC", "USA"),
