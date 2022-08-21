@@ -7,26 +7,16 @@ library(shinythemes)
 library(timevis)
 library(RCurl)
 
-x<-getURL("https://raw.githubusercontent.com/ignaciofeged/loomis-racial-history/herokutest/TimelineData4-1.csv")
+x<-getURL("https://raw.githubusercontent.com/ignaciofeged/loomis-racial-history/heroku2/Timeline-Data-(edited).csv")
 timeline_data1<-read_csv(x)
-as.tibble(timeline_data1)
-timeline_data1$month[is.na(timeline_data1$month)]<-1
-timeline_data1$help<-timeline_data1$thing-1700
-timeline_data1$help<-timeline_data1$help*365+timeline_data1$month*31
-timeline_data1$start<-as.Date(timeline_data1$help,origin="1700-01-01")
-
-y<-getURL("https://raw.githubusercontent.com/ignaciofeged/loomis-racial-history/herokutest/TimelineData4-2.csv")
-timeline_data2<-read_csv(y)
-as.tibble(timeline_data2)
-timeline_data2$month[is.na(timeline_data2$month)]<-1
-timeline_data2$help<-timeline_data2$thing-1700
-timeline_data2$help<-timeline_data2$help*365+timeline_data2$month*31
-timeline_data2$start<-as.Date(timeline_data2$help,origin="1700-01-10")
-
-timeline_data<-rbind(timeline_data1,timeline_data2)
 as.tibble(timeline_data)
+timeline_data$month[is.na(timeline_data$month)]<-1
+timeline_data$help<-timeline_data$thing-1700
+timeline_data$help<-timeline_data$help*365+timeline_data$month*31
+timeline_data$start<-as.Date(timeline_data$help,origin="1700-01-01")
 as.factor(timeline_data$group)
-timeline_data$id<-1:121
+timeline_data$id<-1:38
+
 ##Time Vis prep############
 timevisDataGroups <- data.frame(
   id = c("CT", "SC", "USA"),
