@@ -42,5 +42,7 @@ ui<- fluidPage(theme = shinytheme("simplex"),
                                      h1("More Information:"),
                                      br())),
                    htmlOutput("printNotes")),
-               )
+               ),
+               tags$head(
+                 tags$link(href = "style.css", rel = "stylesheet")),
 )
