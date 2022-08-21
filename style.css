@@ -1,16 +1,16 @@
-#LCline .vis-item.CT {
+LCline .vis-item.CT {
   border-color: #1dade5;
   background-color: #1dade5;
   color: #fff;
 }
 
-#LCline .vis-item.SC {
+LCline .vis-item.SC {
   border-color: #158CBA;
   background-color: #158CBA; 
   color: #fff; 
 }
 
-#LCline .vis-item.USA {
+LCline .vis-item.USA {
   border-color: #75CAEB;  
   background-color: #75CAEB; 
   color: #fff; 
