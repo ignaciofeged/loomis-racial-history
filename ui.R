@@ -44,5 +44,7 @@ ui<- fluidPage(theme = shinytheme("simplex"),
                    htmlOutput("printNotes")),
                ),
                tags$head(
-                 tags$link(href = "style.css", rel = "stylesheet")),
-)
+                 tags$style(HTML(".CT   { border-color: red; color: white; background-color: red; }
+                     .USA { border-color: green; color: white; background-color: green; }
+                    ")))
+               )
