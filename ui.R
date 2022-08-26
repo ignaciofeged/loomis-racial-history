@@ -46,5 +46,5 @@ ui<- fluidPage(theme = shinytheme("simplex"),
                tags$head(
                  tags$style(HTML(".CT   { border-color: red; color: white; background-color: red; }
                      .USA { border-color: green; color: white; background-color: green; }
-                    ")))
+                    "))),
                )
