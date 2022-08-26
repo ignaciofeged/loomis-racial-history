@@ -46,5 +46,6 @@ ui<- fluidPage(theme = shinytheme("simplex"),
                tags$head(
                  tags$style(HTML(".CT   { border-color: red; color: white; background-color: red; }
                      .USA { border-color: green; color: white; background-color: green; }
+.js-irs-0 .irs-single, .js-irs-0 .irs-bar-edge, .js-irs-0 .irs-bar {background: #98252b}
                     "))),
                )
