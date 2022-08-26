@@ -8,7 +8,7 @@ library(timevis)
 library(RCurl)
 
 x<-getURL("https://raw.githubusercontent.com/ignaciofeged/loomis-racial-history/heroku2/Timeline-Data-(edited).csv")
-timeline_data1<-read_csv(x)
+timeline_data<-read_csv(x)
 as.tibble(timeline_data)
 timeline_data$month[is.na(timeline_data$month)]<-1
 timeline_data$help<-timeline_data$thing-1700
