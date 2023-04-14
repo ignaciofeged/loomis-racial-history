@@ -40,7 +40,7 @@ server <- function(input, output) {
   note<-reactive({
     if (!is.null(values$tl_selected)){
       filter(timeline_data,id==values$tl_selected)%>%
-        pull(Notes)
+        pull(6)
     }
   })
   #create server to UI variable for Notes conditional pannel#
